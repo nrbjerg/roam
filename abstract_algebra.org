@@ -1,0 +1,102 @@
+
+* Group Theory
+** group :group_theory:def:
+:PROPERTIES:
+:ID:       c0144fac-06cd-4c77-be76-2a6d311dfbd2
+:END:
+A *group* $(G, \circ)$ is a set $G$ together with a binary operation $\circ: G \times G \to G$, such that
+1. there exists a *neutral element* $e \in G$ such that $e \circ a = a \circ e = a$.
+2. $\circ$ is associative, that is $a \circ (b \circ c) = (a \circ b) \circ c$.
+3. there exists $a^{-1} \in G$ such that $a^{-1}a = aa^{-1} = e$.
+4. Finally if $a \circ b = b \circ a$, then $G$ is an called *abelian* group.
+holds for all $a, b, c \in G$.
+
+** subgroup :group_theory:def:
+:PROPERTIES:
+:ID:       83183a1a-0382-4767-8660-7bd8a1c3b7b6
+:END:
+Let $G$ be a [[id:c0144fac-06cd-4c77-be76-2a6d311dfbd2][group]], then $H \subseteq G$ is called a *subgroup* of $G$ if $H$ is a group.
+
+* Ring Theory
+** ring :ring_theory:def:
+:PROPERTIES:
+:ID:       da2e3d82-5997-4a71-b08d-54702b2783d1
+:END:
+A *ring* is a set $R$ with two binary operations, $+$ and $\cdot$, such that
+1. $(R, +)$ is an abelian [[id:c0144fac-06cd-4c77-be76-2a6d311dfbd2][group]], with neutral element $0$.
+2. $\cdot$ is associative, that is $(xy)z = x(yz)$.
+3. $\cdot$ is distributive, that is $x(y + z) = xy + xz$ and $(y + z)x = yx + zx$.
+4. there exists $1 \in R$ st. $x1 = 1x = x$.
+5. Finally $R$ is called *commutative* if $xy = yx$.
+For all $x, y, z \in R$.
+
+** ring homomorphism :ring_theory:def:
+:PROPERTIES:
+:ID:       2f433eea-efd9-463c-86fb-f6bf0ca120ca
+:END:
+Let $R, S$ be [[id:da2e3d82-5997-4a71-b08d-54702b2783d1][ring]]s then $f: R \to S$ is called a *homomorphism* if
+1. $f(x + y) = f(x) + f(y)$.
+2. $f(xy) = f(x)f(y)$.
+3. $f(1)=1$.
+
+
+** subring :ring_theory:def:
+:PROPERTIES:
+:ID:       5efe3557-0848-490a-8d7e-f9b014f72152
+:END:
+Let $R$ be a [[id:da2e3d82-5997-4a71-b08d-54702b2783d1][ring]], then $S \subseteq R$ is called a *subring* if $S$ is a [[roam:ring.]]
+
+** ideal :ring_theory:def:
+:PROPERTIES:
+:ID:       a8e4a5f3-a1b0-4845-a4ed-fc56fdaded37
+:END:
+Let $R$ be a ring, then $I \subseteq R$ is called an *ideal* if $I$ is an additive [[id:83183a1a-0382-4767-8660-7bd8a1c3b7b6][subgroup]] and $RI \subseteq I$, that is $x \in R$ and $y \in I$ implies that $xy \in I$
+
+** Noetherian ring :ring_theory:def:
+:PROPERTIES:
+:ID:       8eaabfef-ba06-4845-8b1e-d9f7d0e12e93
+:END:
+A [[id:da2e3d82-5997-4a71-b08d-54702b2783d1][ring]] $R$ is called *Noetherian* if for all [[id:a8e4a5f3-a1b0-4845-a4ed-fc56fdaded37][ideal]]s $I \subseteq R$, there exists $n \in \mathbb{N}$ and $a_1, \ldots, a_n \in R$ such that $\langle a_{1}, \ldots, a_{n} \rangle = I$.
+
+** Hilbert basis theorem :ring_theory:res:
+:PROPERTIES:
+:ID:       df5c7914-74c7-441f-b5ad-a76ce4ceb9b3
+:END:
+If $R$ is a [[id:8eaabfef-ba06-4845-8b1e-d9f7d0e12e93][Noetherian ring]], then so is $R[X_1, \ldots, X_n]$.
+
+** radical of an ideal :ring_theory:def:
+:PROPERTIES:
+:ID:       bde2bcef-b808-4b2f-8653-9e77d483db42
+:END:
+Let $R$ be a [[id:da2e3d82-5997-4a71-b08d-54702b2783d1][ring]] and let $I \subseteq R$ be an [[id:a8e4a5f3-a1b0-4845-a4ed-fc56fdaded37][ideal]], then the [[id:a8e4a5f3-a1b0-4845-a4ed-fc56fdaded37][ideal]] $Rad(I) := \left\{a \in R \middle| a^n \in I \text{ for some } n \in \mathbb{N} \setminus \left\{0\right\}\right\}$ is called the *radical* of $I$.
+
+** radical ideal :ring_theory:def:
+:PROPERTIES:
+:ID:       32042910-c7fd-48a0-981b-4d874799c667
+:END:
+An [[id:a8e4a5f3-a1b0-4845-a4ed-fc56fdaded37][ideal]] $I \subseteq R$ is called a *radical ideal* if $Rad(I) = I$ (see [[id:bde2bcef-b808-4b2f-8653-9e77d483db42][radical of an ideal]])
+
+** prime ideal :ring_theory:def:
+:PROPERTIES:
+:ID:       08f3b491-6b51-4191-be7e-d02e140cbf28
+:END:
+An [[id:a8e4a5f3-a1b0-4845-a4ed-fc56fdaded37][ideal]] $I \subset R$ of the commutative [[id:da2e3d82-5997-4a71-b08d-54702b2783d1][ring]] $R$ is called a *prime ideal* if $ab \in I$ implies $a \in I$ or $b \in I$.
+
+** irreducible element :ring_theory:def:
+:PROPERTIES:
+:ID:       89973066-fcbb-4ae2-8c34-582ce7506244
+:END:
+TODO
+
+** module :ring_theory:def:
+:PROPERTIES:
+:ID:       b6e1b65d-33b9-45ab-b53c-0c4e91529fdc
+:END:
+Let $R$ be a [[id:da2e3d82-5997-4a71-b08d-54702b2783d1][ring]], then a *$R$-module* is a commutative [[id:c0144fac-06cd-4c77-be76-2a6d311dfbd2][group]] $(M, +)$ together with a scalar multiplication ($\cdot: R \times M \to M$) satisfying:
+1. $(a + b) m = am + bm$
+2. $a (m+n) = am + an$
+3. $(ab)m = a(bm)$
+4. $1_Rm = m$
+for all $a, b \in R$ and $m \in M$.
+
+Please note that if $R$ is a field, then an $R$-module is the same as a vector space.

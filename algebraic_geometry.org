@@ -1,0 +1,70 @@
+* Algebraic Geometry
+
+** affine space :algebraic_geometry:def:
+:PROPERTIES:
+:ID:       cb67d3cc-afd7-4616-b629-6a23025607ee
+:END:
+Let $\mathbb{k}$ be a clsoed field, then $\mathbb{A}^n := \left\{(x_1,\ldots, x_n) \middle| x_i \in \mathbb{k}\right\}$ is called the *affine space* over $\mathbb{k}$.
+
+** algebraic set :algebraic_geometry:def:
+:PROPERTIES:
+:ID:       1b699acc-c9a0-49f7-b5bf-7b3d4840b56d
+:END:
+A subset $X$ of the [[id:cb67d3cc-afd7-4616-b629-6a23025607ee][affine space]] $\mathbb{A}^n$, is called *algebraic* if there exists $S \subseteq \mathbb{k}[X_1, X_2 \ldots, X_{n}]$, such that $X = Z(S)$. Furthermore $X$ is called *reducible* if there exists [[id:1b699acc-c9a0-49f7-b5bf-7b3d4840b56d][algebraic set]]s $V_1, V_2$ such that $X = V_1 \cup V_2$, otherwise $X$ is called *ireducible*
+
+** hypersurface :algebraic_geometry:def:
+:PROPERTIES:
+:ID:       375cb2a3-10fd-4af8-a8c7-7e0da64e425b
+:END:
+Let $F \in \mathbb{k}[X_1, X_2 \ldots, X_{n}]$, then $Z(S)$ is called a *hypersurface*
+
+** ideal of a set :algebraic_geometry:def:
+:PROPERTIES:
+:ID:       075593c8-4a32-4076-88c9-a80acb63bc0f
+:END:
+Let $X$ be a subset of the [[id:cb67d3cc-afd7-4616-b629-6a23025607ee][affine space]] $\mathbb{A}^{n}$, then the [[id:a8e4a5f3-a1b0-4845-a4ed-fc56fdaded37][ideal]] $I(X) := \left\{f \in \mathbb{k}[X_1, X_2 \ldots, X_{n}] \middle| f(p) = 0 \forall p \in X\right\}$, is caled the *ideal* of $X$.
+
+** relations between ideals and algebraic sets :algebraic_geometry:res:
+:PROPERTIES:
+:ID:       92840dc0-0e5e-43ae-8fbc-0e77a123168e
+:END:
+We pressent some relations between [[id:075593c8-4a32-4076-88c9-a80acb63bc0f][ideal of a set]] and [[id:1b699acc-c9a0-49f7-b5bf-7b3d4840b56d][algebraic set]], let $X, Y \subseteq \mathbb{A}^{n}$ and $S \subseteq \mathbb{k}[X_1, X_2 \ldots, X_{n}]$, then:
+1. $X \subseteq Y$ implies $I(Y) \subseteq I(X)$.
+2. $I(\emptyset) = \mathbb{k}[X_1, X_2 \ldots, X_{n}]$ as well as $I(\mathbb{A}^n) = \left\{0\right\}$.
+3. $S \subseteq I(Z(S))$ and $X \subseteq Z(I(X))$.
+4. $Z(S) = Z(I(Z(S)))$ and $I(X) = I(Z(I(X)))$.
+5. $I(X)$ is a [[id:32042910-c7fd-48a0-981b-4d874799c667][radical ideal]].
+
+** every [[id:1b699acc-c9a0-49f7-b5bf-7b3d4840b56d][algebraic set]] can be written as a intersection of [[id:375cb2a3-10fd-4af8-a8c7-7e0da64e425b][hypersurface]]s :algebraic_geometry:res:
+:PROPERTIES:
+:ID:       0768478e-30bb-4dbb-b1b3-35e4daf31f5c
+:END:
+Let $X$ be an [[id:1b699acc-c9a0-49f7-b5bf-7b3d4840b56d][algebraic set]], then there exists $F_1, \ldots, F_k \in \mathbb{k}[X_1, X_2 \ldots, X_{n}]$ such that $X$ is the intersection of the [[id:375cb2a3-10fd-4af8-a8c7-7e0da64e425b][hypersurface]]s $Z(F_i)$.
+
+This can be prooved using [[id:df5c7914-74c7-441f-b5ad-a76ce4ceb9b3][Hilbert basis theorem]]
+
+** criterias for ireducibility :algebraic_geometry:res:
+:PROPERTIES:
+:ID:       013c90c6-3c7a-44de-a9ac-bd5075ab0c36
+:END:
+Let $V$ be a [[id:1b699acc-c9a0-49f7-b5bf-7b3d4840b56d][algebraic set]], then $V$ is irreducible (see [[id:1b699acc-c9a0-49f7-b5bf-7b3d4840b56d][algebraic set]]) if and only if $I(V)$ is a [[id:08f3b491-6b51-4191-be7e-d02e140cbf28][prime ideal]].
+
+** irreducible components of an [[id:1b699acc-c9a0-49f7-b5bf-7b3d4840b56d][algebraic set]] :algebraic_geometry:def:res:
+:PROPERTIES:
+:ID:       1b6914e7-8307-445e-8da3-3e513c4068e3
+:END:
+Let $V \subseteq \mathbb{A}^{n}$ be an [[id:1b699acc-c9a0-49f7-b5bf-7b3d4840b56d][algebraic set]], then there exists unique [[irreducible roam:algebraic sets]] $V_1, V_2, \ldots V_m$ such that $V = \bigcup_{i = 1}^m V_i$ and $V_i \not \subseteq V_{j}$ for all $i \neq j$. Then $V_1, V_2, \ldots V_n$ is called the *irreducible components* of $V$, and $\bigcup_{i = 1}^m V_i$ is called the *irreducible decomposition* of $V$.
+
+Combining this with [[id:5cbc962d-42cd-44cc-aac2-6f7bc39939bc][Hilbert's Nullstellensatz]], one can show that if $F = \prod_{i = 1}^{r}F_i^{n_{i}}$, is the decomposition of $F$ into irreducible elements (see [[id:89973066-fcbb-4ae2-8c34-582ce7506244][irreducible element]]), then $Z(F) = \bigcup_{i = 1}^r Z(F_i)$ is the irreducible decomposition of $Z(F)$
+
+** weak nullstellensatz :algebraic_geometry:res:
+:PROPERTIES:
+:ID:       34b53223-08f5-4ebd-ab40-cf02d8650cb2
+:END:
+If $I \subseteq \mathbb{k}[X_1, X_2 \ldots, X_{n}]$ is a proper [[id:a8e4a5f3-a1b0-4845-a4ed-fc56fdaded37][ideal]], then $Z(I) \neq \emptyset$.
+
+** Hilbert's Nullstellensatz :algebraic_geometry:res:
+:PROPERTIES:
+:ID:       5cbc962d-42cd-44cc-aac2-6f7bc39939bc
+:END:
+Let $I \subseteq \mathbb{k}[X_1, X_2 \ldots, X_{n}]$ be an [[id:a8e4a5f3-a1b0-4845-a4ed-fc56fdaded37][ideal]], then $I(Z(I)) = Rad(I)$ (see [[id:bde2bcef-b808-4b2f-8653-9e77d483db42][radical of an ideal]]).
